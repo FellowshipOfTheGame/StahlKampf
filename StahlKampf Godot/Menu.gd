@@ -5,6 +5,10 @@ extends Sprite
 # var a=2
 # var b="textvar"
 
+func _input(ev):
+   if (ev.type==InputEvent.MOUSE_BUTTON and ev.button_index==BUTTON_LEFT and ev.pressed):
+       print("Left mouse button was pressed!")
+
 
 func _on_Lvl_1_pressed():
 	get_tree().change_scene("res://burningLake.scn")
@@ -15,7 +19,7 @@ func _on_Lvl_2_pressed():
 
 
 func _on_Lvl_3_pressed():
-	get_node("Lvl_3").set_text("DLC Only")
+	get_tree().change_scene("res://Credits.scn")
 
 
 func _on_Surrender_pressed():
